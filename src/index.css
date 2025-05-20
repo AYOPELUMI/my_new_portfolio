@@ -239,7 +239,7 @@ section {
   }
 
   .timeline-wrapper {
-    @apply absolute top-0 xl:left-[35.5vw] md:left-10 left-5 h-full flex justify-center;
+    @apply absolute top-0 xl:left-[39.5vw] md:left-10 left-5 h-full flex justify-center;
   }
 
   .timeline {
@@ -407,7 +407,7 @@ section {
   height: 100%;
   position: absolute;
   overflow: hidden;
-  animation: marquee 60s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 .marquee-item {
   float: left;
