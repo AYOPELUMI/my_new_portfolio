@@ -1,4 +1,4 @@
- export const navLinks = [
+export const navLinks = [
   {
     name: "Work",
     link: "#work",
@@ -17,7 +17,7 @@
   },
 ];
 
-  export const words = [
+export const words = [
   { text: "Ideas", imgPath: "/images/ideas.svg" },
   { text: "Concepts", imgPath: "/images/concepts.svg" },
   { text: "Designs", imgPath: "/images/designs.svg" },
@@ -112,11 +112,28 @@ export const techStackImgs = [
   },
 ];
 
- export const techStackIcons = [
+export const techStackIcons = [
   {
     name: "React Developer",
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
+    rotation: [0, 0, 0],
+  },
+  {
+    name: "Flutter Developer",
+    modelPath: "/models/flutter.glb",
+    scale: 6,
+    rotation: [0, 0, 0],
+  },
+  {
+    name: "Git User",
+    modelPath: "/models/github.glb",
+    scale: 5,
+    rotation: [0, 0, 0],
+  }, {
+    name: "Typescript Developer",
+    modelPath: "/models/typescript.glb",
+    scale: 4,
     rotation: [0, 0, 0],
   },
   {

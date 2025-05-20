@@ -1,6 +1,6 @@
 import AnimatedCounter from "../components/animatedCounter";
 import Button from "../components/button"
-import HeroExperience from "../components/hero models/heroExperience"
+import HeroExperience from "../components/models/hero models/heroExperience"
 import { words } from "../constants/constants"
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
