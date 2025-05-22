@@ -214,45 +214,45 @@ export const expLogos = [
 
 export const testimonials = [
   {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
+    name: "",
+    mentions: "",
     review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+      "Transformed our Angular component libraries into stunning, responsive interfaces. The ability to bridge design and functionality while ensuring technical feasibility was invaluable to our project's success.",
     imgPath: "/images/client1.png",
   },
   {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
+    name: "",
+    mentions: "",
     review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
+      "The Flutter development work delivered pixel-perfect UIs that worked seamlessly across Android and iOS. The implementation of scalable architectures with GetX and Riverpod was particularly impressive.",
     imgPath: "/images/client3.png",
   },
   {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
+    name: "",
+    mentions: "",
     review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "The React and Next.js expertise helped us build a performant application with optimized state management. The API integration skills and attention to optimization significantly improved our loading times.",
     imgPath: "/images/client2.png",
   },
   {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
+    name: "",
+    mentions: "",
     review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+      "The real-time features implemented with Firebase and clean state management architecture made all the difference in our app's user experience. The technical decisions were always well-considered.",
     imgPath: "/images/client5.png",
   },
   {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
+    name: "",
+    mentions: "",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+      "The responsive web interfaces built with React and Tailwind CSS helped our platform stand out. The mobile-first approach and rigorous testing methodology ensured flawless cross-device performance.",
     imgPath: "/images/client4.png",
   },
   {
-    name: "Albert Flores",
-    mentions: "@albertflores",
+    name: "",
+    mentions: "",
     review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
+      "The implementation of complex features like Google Maps integration and push notifications was exceptional, all while maintaining clean, maintainable code architecture throughout the project lifecycle.",
     imgPath: "/images/client6.png",
   },
 ];
