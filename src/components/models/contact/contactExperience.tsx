@@ -1,7 +1,7 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-import { OfficeComputer } from "./office_computer";
+import { OfficeSetUp } from "./Setup-optimized"
 
 const ContactExperience = () => {
     return (
@@ -30,12 +30,12 @@ const ContactExperience = () => {
                     rotation={[-Math.PI / 2, 0, 0]}
                 >
                     <planeGeometry args={[30, 30]} />
-                    <meshStandardMaterial color="#a46b2d" />
+                    <meshStandardMaterial color="#62e0ff" />
                 </mesh>
             </group>
 
-            <group scale={0.02} position={[-1, 0, 0]} castShadow>
-                <OfficeComputer />
+            <group scale={2} position={[-1, -1, 0]} castShadow>
+                <OfficeSetUp />
             </group>
         </Canvas>
     );

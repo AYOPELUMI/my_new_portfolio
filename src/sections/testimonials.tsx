@@ -13,9 +13,6 @@ const Testimonials = () => {
                             <GlowCard card={{ review: testimony.review }}>
                                 <div className=" flex gap-3">
                                     <div>
-                                        <img src={testimony.imgPath} alt={testimony.name} />
-                                    </div>
-                                    <div>
                                         <p className="font-bold">{testimony.name}</p>
                                         <p className="text-white-50">{testimony.mentions}</p>
                                     </div>

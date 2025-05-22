@@ -214,6 +214,13 @@ export const expLogos = [
 
 export const testimonials = [
   {
+    name: "Tobi oyeleye",
+    mentions: "@tobioyeleye",
+    review:
+      "Has abilities to turn ideas into stunning, responsive interfaces. The ability to bridge design and functionality while ensuring technical feasibility was invaluable to our project's success.",
+    imgPath: "/images/client1.png",
+  },
+  {
     name: "Adeeyo Michael",
     mentions: "@Ademic_code",
     review:
@@ -221,8 +228,8 @@ export const testimonials = [
     imgPath: "/images/client3.png",
   },
   {
-    name: "",
-    mentions: "",
+    name: "Godwin Lawal",
+    mentions: "godwinlawaldev",
     review:
       "The React and Next.js expertise helped us build a performant application with optimized state management. The API integration skills and attention to optimization significantly improved our loading times.",
     imgPath: "/images/client2.png",
@@ -235,15 +242,15 @@ export const testimonials = [
     imgPath: "/images/client5.png",
   },
   {
-    name: "",
-    mentions: "",
+    name: "Bowofade Oyerinde",
+    mentions: "@Fade_networker",
     review:
       "The responsive web interfaces built with React and Tailwind CSS helped our platform stand out. The mobile-first approach and rigorous testing methodology ensured flawless cross-device performance.",
     imgPath: "/images/client4.png",
   },
   {
-    name: "",
-    mentions: "",
+    name: "Olatunji Babajide",
+    mentions: "@JidnationFlex",
     review:
       "The implementation of complex features like Google Maps integration and push notifications was exceptional, all while maintaining clean, maintainable code architecture throughout the project lifecycle.",
     imgPath: "/images/client6.png",
