@@ -2,14 +2,15 @@ import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 import *  as THREE from "three";
+import type { GLTF } from 'three-stdlib';
 
 const TechIcon = ({ model }: any) => {
-    const scene = useGLTF(model.modelPath);
+    const scene = useGLTF(model.modelPath) as GLTF;
     useEffect(() => {
         if (model.name === "Interactive Developer") {
-            scene.scene.traverse((child) => {
-                if (child.isMesh && child.name === "Object_5") {
-                    child.material = new THREE.MeshStandardMaterial({ color: "white" })
+            (scene).scene.traverse((child) => {
+                if (child instanceof THREE.Mesh && child.name === "Object_5") {
+                    child.material = new THREE.MeshStandardMaterial({ color: "white" });
                 }
             })
         }

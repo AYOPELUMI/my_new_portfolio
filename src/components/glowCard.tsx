@@ -20,7 +20,9 @@ const GlowCard = ({ card, children, index }: any) => {
         card.style.setProperty("--start", `${angle + 60}`);
     }
     return (
-        <div ref={(el) => (cardRefs.current[index] = el)} onMouseMove={handleMouseMove(index)} className='card card-border timeline-card rounded-xl p-10 mb-5  break-inside-avoid-column'>
+        <div ref={(el) => {
+            cardRefs.current[index] = el;
+        }} onMouseMove={handleMouseMove(index)} className='card card-border timeline-card rounded-xl p-10 mb-5  break-inside-avoid-column'>
             <div className='glow' />
             <div className='flex mb-5 items-center gap-1 '>
                 {Array.from({ length: 5 }, (_, i) => (
