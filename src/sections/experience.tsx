@@ -6,10 +6,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { expCards } from '../constants/constants';
+import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Experience = () => {
+const Experience = ({ onLoad }) => {
     useGSAP(() => {
         gsap.utils.toArray('.timeline-card').forEach((card: any) => {
             gsap.from(card, {
@@ -52,6 +53,9 @@ const Experience = () => {
             })
         })
     }, [])
+
+
+
     return (
         <section id='experience' className='w-full md:mt-40 mt-20 section-padding xl:px-0'>
             <div className='w-full h-full md:px-20 px-5 '>
@@ -60,7 +64,7 @@ const Experience = () => {
             <div className='mt-32 relative'>
                 <div className='relative z-50 xl:space-y-32 space-y-10'>
                     {expCards.map((exp: any, index: number) => (
-                        <div key={exp.title} className="exp-card-wrapper">
+                        <div key={exp.company} className="exp-card-wrapper">
                             <div className="xl:w-2/6">
                                 <GlowCard card={exp} index={index}>
                                     <h1 className='font-semibold text-xl '>{exp.company}</h1>
@@ -79,11 +83,11 @@ const Experience = () => {
                                         <div className="timeline-logo">
                                             <div style={{ backgroundColor: exp.color }} className='w-full h-full rounded-full'></div>
                                         </div>
-                                        <div>
+                                        <div className='pr-5'>
                                             <h1 className='font-semibold text-3xl '>{exp.title}</h1>
                                             <p className="my-5 text-white-50">{exp.date}</p>
                                             <p className="text-[#839cb5] italic">Responsibilities</p>
-                                            <ul className="text-white-50 list-disc ms-5 mt-5 pr-4 flex flex-col">
+                                            <ul className="text-white-50 list-disc ms-5 lg:me-10 mt-5  flex flex-col">
                                                 {exp.responsibilities.map((responsibility: any) => (
                                                     <li key={responsibility} className='text-lg'>
                                                         {responsibility}

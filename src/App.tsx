@@ -1,30 +1,91 @@
-import Hero from './sections/hero'
-import ShowCase from './sections/showcase'
-import Navbar from './sections/navbar'
-import FeatureCards from './sections/featureCards'
-import Experience from './sections/experience'
-import TechStack from './sections/techStack'
-import Contact from './sections/contact'
-import Testimonials from './sections/testimonials'
-import Footer from './sections/footer'
+import { lazy, Suspense, useEffect, useState } from 'react';
+import Navbar from './sections/navbar';
+import Hero from './sections/hero';
+import Footer from './sections/footer';
+import { useGLTF } from '@react-three/drei';
+import Contact from './sections/contact';
+import TechStack from './sections/techStack';
+
+// Lazy load other sections
+const ShowCase = lazy(() => import('./sections/showcase'));
+const FeatureCards = lazy(() => import('./sections/featureCards'));
+const Experience = lazy(() => import('./sections/experience'));
+// const TechStack = lazy(() => import('./sections/techStack'));
+const Testimonials = lazy(() => import('./sections/testimonials'));
+// const Contact = lazy(() => import('./sections/contact'));
 
 
+const Preload3D = () => {
+  useEffect(() => {
+    const preloadAssets = async () => {
+      try {
+        await Promise.all([
+          useGLTF.preload('/models/optimized-room.glb'),
+          useGLTF.preload('/models/react_logo-transformed.glb'),
+          useGLTF.preload('/models/flutter.glb'),
+          useGLTF.preload('/models/github.glb'),
+          useGLTF.preload('/models/typescript.glb'),
+          useGLTF.preload('/models/node-transformed.glb'),
+          useGLTF.preload('/models/three.js-transformed.glb'),
+          useGLTF.preload('/models/git.svg-transformed.glb'),
+          useGLTF.preload('/models/setup-optimized-transformed.glb')
+        ]);
+      } catch (error) {
+        console.error('Error preloading 3D assets:', error);
+      }
+    };
+
+    preloadAssets();
+  }, []);
+
+  return null;
+};
+// Improved placeholder with loading states
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedCount, setLoadedCount] = useState(0);
+  const totalSections = 5; // Update this with your actual count
 
+  const handleSectionLoad = () => {
+    setLoadedCount(prev => {
+      const newCount = prev + 1;
+      if (newCount === totalSections) setIsLoading(false);
+      return newCount;
+    });
+  };
 
   return (
     <>
+      <Preload3D />
       <Navbar />
       <Hero />
-      <ShowCase />
-      <FeatureCards />
-      <Experience />
-      <TechStack />
-      <Testimonials />
-      <Contact />
+
+
+      <Suspense fallback={<LogoPlaceholder />}>
+        <ShowCase onLoad={handleSectionLoad} />
+        <FeatureCards onLoad={handleSectionLoad} />
+        <Experience onLoad={handleSectionLoad} />
+      </Suspense>
+      <TechStack onLoad={handleSectionLoad} />
+      <Testimonials onLoad={handleSectionLoad} />
+      <Contact onLoad={handleSectionLoad} />
+
       <Footer />
-    </ >
-  )
+    </>
+  );
 }
 
-export default App
+// Logo placeholder component
+function LogoPlaceholder() {
+  return (
+    <div className="flex-center min-h-screen">
+      <img
+        src="/images/fav.png"
+        alt="Loading..."
+        className="w-32 h-32 animate-pulse"
+      />
+    </div>
+  );
+}
+
+export default App;

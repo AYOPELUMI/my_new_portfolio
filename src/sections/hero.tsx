@@ -28,8 +28,8 @@ const Hero = () => {
                             <h1>Transforming
                                 <span className='slide'>
                                     <span className='wrapper'>
-                                        {words.map((word: any) => (
-                                            <span key={word.text} className='flex items-center md:gap-3 gap-1 pb-2'>
+                                        {words.map((word: any, index) => (
+                                            <span key={`${word.text}-${index}`} className='flex items-center md:gap-3 gap-1 pb-2'>
                                                 <img src={word.imgPath} alt={word.text} className='xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50' />
                                                 <span>{word.text}</span>
                                             </span>
@@ -42,7 +42,7 @@ const Hero = () => {
                         </div>
 
                         <p className="text-white-50 md:text-xl relative z-10 md: w-1/3">👋 Hi, I am Ayodeji, passionate about crafting interfaces that users love — whether it's a responsive web app or cross-platform mobile experience. I thrive where creativity meets code to turn ideas into seamless solutions. Let's build something amazing! ✨</p>
-                        <Button className="md:w-80 md:h-16 w-60 h-12" id="See my Work" text="See my work" />
+                        <Button className="md:w-80 md:h-16 w-60 h-12" id="work" text="See my work" />
                     </div>
 
                 </header>

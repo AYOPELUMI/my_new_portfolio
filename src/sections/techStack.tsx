@@ -3,7 +3,8 @@ import TitleHeader from '../components/titleeader'
 import TechIcon from '../components/tech logos/techIcon'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-const TechStack = () => {
+import { useEffect } from 'react'
+const TechStack = ({ onLoad }) => {
 
     useGSAP(() => {
         gsap.fromTo(".tech-card", {

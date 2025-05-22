@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     return (
         <div ref={ref} className={`project group relative ${className}`}>
             <div className={`image-wrapper ${imageBg}`}>
-                <img src={imageSrc} alt={altText} />
+                <img src={imageSrc} alt={altText} loading="eager" />
             </div>
             <h2>{title}</h2>
             <ProjectLinks githubUrl={githubUrl} webUrl={webUrl} />

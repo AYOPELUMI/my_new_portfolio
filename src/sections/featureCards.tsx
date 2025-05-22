@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { abilities } from "../constants/constants"
 
-const FeatureCards = () => {
+const FeatureCards = ({ onLoad }) => {
+
     return (
         <section className="w-full padding-x-lg ">
             <div className="mx-auto grid-3-cols">

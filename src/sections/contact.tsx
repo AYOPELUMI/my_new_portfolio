@@ -1,11 +1,18 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback, memo, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-
-import TitleHeader from "../components/titleeader";
 import ContactExperience from "../components/models/contact/contactExperience";
 
-const Contact = () => {
-    const formRef = useRef(null);
+const TitleHeader = memo(function TitleHeader({ title, sub }: { title: string; sub: string }) {
+    return (
+        <div className="text-center">
+            <h2 className="text-4xl font-bold">{title}</h2>
+            <p className="mt-4 text-lg">{sub}</p>
+        </div>
+    );
+});
+
+const Contact = ({ onLoad }) => {
+    const formRef = useRef<HTMLFormElement>(null);
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         name: "",
@@ -13,37 +20,43 @@ const Contact = () => {
         message: "",
     });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+
+    const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
-    };
+        setForm(prev => ({ ...prev, [name]: value }));
+    }, []);
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setLoading(true); // Show loading state
+        setLoading(true);
 
-        try {
-            if (!formRef.current) return;
+        // Yield to browser for paint
+        setTimeout(async () => {
+            try {
+                if (!formRef.current) return;
 
-            await emailjs.sendForm(
-                import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-                formRef.current,
-                import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-            );
+                await emailjs.sendForm(
+                    import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+                    import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+                    formRef.current,
+                    import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+                );
 
-            // Reset form and stop loading
-            setForm({ name: "", email: "", message: "" });
-        } catch (error) {
-            console.error("EmailJS Error:", error); // Optional: show toast
-        } finally {
-            setLoading(false); // Always stop loading, even on error
-        }
-    }; return (
+                setForm({ name: "", email: "", message: "" });
+            } catch (error) {
+                console.error("EmailJS Error:", error);
+            } finally {
+                setLoading(false);
+            }
+        }, 0);
+    };
+
+    return (
         <section id="contact" className="flex-center section-padding">
             <div className="w-full h-full md:px-10 px-5">
                 <TitleHeader
-                    title="Get in Touch – Let’s Connect"
-                    sub="💬 Have questions or ideas? Let’s talk! 🚀"
+                    title="Get in Touch – Let's Connect"
+                    sub="💬 Have questions or ideas? Let's talk! 🚀"
                 />
                 <div className="grid-12-cols mt-16">
                     <div className="xl:col-span-5">
@@ -53,6 +66,7 @@ const Contact = () => {
                                 onSubmit={handleSubmit}
                                 className="w-full flex flex-col gap-7"
                             >
+
                                 <div>
                                     <label htmlFor="name">Your name</label>
                                     <input
@@ -91,15 +105,20 @@ const Contact = () => {
                                         required
                                     />
                                 </div>
-
-                                <button type="submit">
+                                <button type="submit" disabled={loading}>
                                     <div className="cta-button group">
                                         <div className="bg-circle" />
                                         <p className="text">
                                             {loading ? "Sending..." : "Send Message"}
                                         </p>
                                         <div className="arrow-wrapper">
-                                            <img src="/images/arrow-down.svg" alt="arrow" />
+                                            <img
+                                                src="/images/arrow-down.svg"
+                                                alt="arrow"
+                                                loading="lazy"
+                                                width="24"
+                                                height="24"
+                                            />
                                         </div>
                                     </div>
                                 </button>
@@ -117,4 +136,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default memo(Contact);

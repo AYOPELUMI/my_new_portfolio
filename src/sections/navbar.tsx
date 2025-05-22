@@ -1,43 +1,52 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, memo, useMemo } from "react";
 import { navLinks } from "../constants/constants";
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(() => window.scrollY > 10);
+    const [scrolled, setScrolled] = useState(() => typeof window !== 'undefined' ? window.scrollY > 10 : false);
+
+    // Throttle scroll handler to prevent excessive updates
+    const handleScroll = useCallback(() => {
+        const isScrolled = window.scrollY > 10;
+        setScrolled(prev => prev !== isScrolled ? isScrolled : prev);
+    }, []);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const isScrolled = window.scrollY > 10;
-            setScrolled(isScrolled);
-        };
-
-        // Check immediately in case the page is already scrolled
+        // Check initial scroll position
         handleScroll();
 
+        // Add passive scroll listener
         window.addEventListener("scroll", handleScroll, { passive: true });
 
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [handleScroll]);
+
+    // Memoize nav links to prevent unnecessary re-renders
+    const renderedNavLinks = useMemo(() => (
+        navLinks.map(({ link, name }) => (
+            <li key={name} className="group">
+                <a href={link}>
+                    <span>{name}</span>
+                    <span className="underline"></span>
+                </a>
+            </li>
+        ))
+    ), [navLinks]);
 
     return (
         <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
             <div className="inner">
-                <a className='logo' href='#hero'>
+                <a className='logo' href='#hero' aria-label="Home">
                     Ayodeji | Pelumi
                 </a>
 
-                <nav className='desktop'>
+                <nav className='desktop' aria-label="Main navigation">
                     <ul>
-                        {navLinks.map(({ link, name }: any) => (
-                            <li key={name} className="group">
-                                <a href={link}>
-                                    <span>{name}</span>
-                                    <span className="underline"></span>
-                                </a>
-                            </li>
-                        ))}
+                        {renderedNavLinks}
                     </ul>
                 </nav>
-                <a href="#contact" className='contact-btn group'>
+                <a href="#contact" className='contact-btn group' aria-label="Contact">
                     <div className="inner text-nowrap">
                         <span>Contact me</span>
                     </div>
@@ -47,4 +56,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default memo(Navbar);

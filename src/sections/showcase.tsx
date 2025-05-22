@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -8,7 +8,7 @@ import ProjectCard from "../components/projectCard";
 gsap.registerPlugin(ScrollTrigger);
 
 
-const ShowCase = () => {
+const ShowCase = ({ onLoad }) => {
     const sectionRef = useRef(null);
     const project1 = useRef(null);
     const project2 = useRef(null);
