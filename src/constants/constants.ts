@@ -214,17 +214,10 @@ export const expLogos = [
 
 export const testimonials = [
   {
-    name: "",
-    mentions: "",
+    name: "Adeeyo Michael",
+    mentions: "@Ademic_code",
     review:
-      "Transformed our Angular component libraries into stunning, responsive interfaces. The ability to bridge design and functionality while ensuring technical feasibility was invaluable to our project's success.",
-    imgPath: "/images/client1.png",
-  },
-  {
-    name: "",
-    mentions: "",
-    review:
-      "The Flutter development work delivered pixel-perfect UIs that worked seamlessly across Android and iOS. The implementation of scalable architectures with GetX and Riverpod was particularly impressive.",
+      "The Flutter development work delivered pixel-perfect UIs that worked seamlessly across Android and iOS. The implementation of scalable architectures with the state management was particularly impressive.",
     imgPath: "/images/client3.png",
   },
   {
@@ -235,8 +228,8 @@ export const testimonials = [
     imgPath: "/images/client2.png",
   },
   {
-    name: "",
-    mentions: "",
+    name: "Gideon Chukwuoma",
+    mentions: "@egideonchuks bro",
     review:
       "The real-time features implemented with Firebase and clean state management architecture made all the difference in our app's user experience. The technical decisions were always well-considered.",
     imgPath: "/images/client5.png",
