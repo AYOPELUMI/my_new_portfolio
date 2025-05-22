@@ -30,7 +30,7 @@ export const words = [
 
 export const counterItems = [
   { value: 3, suffix: "+", label: "Years of Experience" },
-  { value: 10, suffix: "+", label: "Collaboreted Works" },
+  { value: 10, suffix: "+", label: "Collaborated Works" },
   { value: 30, suffix: "+", label: "Completed Projects" },
   { value: 90, suffix: "%", label: "Client Retention Rate" },
 ];
