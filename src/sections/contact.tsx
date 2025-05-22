@@ -13,16 +13,17 @@ const Contact = () => {
         message: "",
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement| HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
     };
-
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true); // Show loading state
 
         try {
+            if (!formRef.current) return;
+
             await emailjs.sendForm(
                 import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
@@ -37,9 +38,7 @@ const Contact = () => {
         } finally {
             setLoading(false); // Always stop loading, even on error
         }
-    };
-
-    return (
+    }; return (
         <section id="contact" className="flex-center section-padding">
             <div className="w-full h-full md:px-10 px-5">
                 <TitleHeader

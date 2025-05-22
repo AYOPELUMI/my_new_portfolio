@@ -29,9 +29,9 @@ export const words = [
 ];
 
 export const counterItems = [
-  { value: 15, suffix: "+", label: "Years of Experience" },
-  { value: 200, suffix: "+", label: "Satisfied Clients" },
-  { value: 108, suffix: "+", label: "Completed Projects" },
+  { value: 3, suffix: "+", label: "Years of Experience" },
+  { value: 10, suffix: "+", label: "Collaboreted Works" },
+  { value: 30, suffix: "+", label: "Completed Projects" },
   { value: 90, suffix: "%", label: "Client Retention Rate" },
 ];
 
@@ -73,42 +73,39 @@ export const logoIconsList = [
 
 export const abilities = [
   {
-    imgPath: "/images/seo.png",
-    title: "Quality Focus",
-    desc: "Delivering high-quality results while maintaining attention to every detail.",
+    imgPath: "/images/code.svg", // Example: A code quality icon
+    title: "Pixel-Perfect Development",
+    desc: "Translating Figma designs into flawless, responsive interfaces with attention to detail.",
   },
   {
-    imgPath: "/images/chat.png",
-    title: "Reliable Communication",
-    desc: "Keeping you updated at every step to ensure transparency and clarity.",
+    imgPath: "/images/state-management.png", // Example: State management icon
+    title: "State Management Expertise",
+    desc: "Proficient in Zustand, React Query, GetX, and Riverpod for scalable app architectures.",
   },
   {
-    imgPath: "/images/time.png",
-    title: "On-Time Delivery",
-    desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
-  },
-];
-
-export const techStackImgs = [
-  {
-    name: "React Developer",
-    imgPath: "/images/logos/react.png",
+    imgPath: "/images/team.png",
+    title: "Cross-Functional Collaboration",
+    desc: "Working closely with designers, backend devs, and PMs to deliver user-centric solutions.",
   },
   {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
+    imgPath: "/images/performance.png",
+    title: "Performance Optimization",
+    desc: "Boosting app speed and scalability through code splitting, caching, and lazy loading.",
   },
   {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
+    imgPath: "/images/mobile.png",
+    title: "Cross-Platform Development",
+    desc: "Building Android/iOS apps with Flutter and responsive web apps with React/Next.js.",
   },
   {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
+    imgPath: "/images/git.png",
+    title: "Version Control & CI/CD",
+    desc: "Maintaining clean Git workflows and deploying via Firebase/Netlify.",
   },
   {
-    name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
+    imgPath: "/images/puzzle-piece.png",
+    title: "Complex Problem Solver",
+    desc: "Debugging challenges in UI logic, API responses, and state management.",
   },
 ];
 
@@ -122,7 +119,7 @@ export const techStackIcons = [
   {
     name: "Flutter Developer",
     modelPath: "/models/flutter.glb",
-    scale: 6,
+    scale: 5,
     rotation: [0, 0, 0],
   },
   {
@@ -134,12 +131,6 @@ export const techStackIcons = [
     name: "Typescript Developer",
     modelPath: "/models/typescript.glb",
     scale: 4,
-    rotation: [0, 0, 0],
-  },
-  {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
-    scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
@@ -164,39 +155,44 @@ export const techStackIcons = [
 
 export const expCards = [
   {
-    review: "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    review: "Ayodeji demonstrated exceptional technical skills and creativity in frontend development, delivering high-quality web applications with a focus on user experience and performance.",
+    color: "#6d45ce",
+    title: "Front End Engineer",
+    date: "JUN 2024 – AUG 2024",
+    location: "Nigeria",
+    company: "ACME SOFTWARE LAB",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Developed and maintained scalable, responsive front-end applications, translating design concepts into interactive and user-friendly web apps.",
+      "Collaborated with designers and back-end developers to ensure seamless integration and intuitive user experiences.",
+      "Optimized applications for maximum speed, scalability, and security.",
     ],
   },
   {
-    review: "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    review: "Ayodeji’s contributions at Ziiycloud Technologies were instrumental in building robust and visually appealing interfaces, showcasing his ability to tackle complex challenges with precision.",
+    color: "#fd5c79",
+    title: "Front End Engineer",
+    date: "SEPT 2024 – NOV 2024",
+    location: "Nigeria",
+
+    company: "ZIIYCLOUD TECHNOLOGIES",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Designed and developed visually stunning interfaces using Angular component libraries, ensuring technical feasibility of UI/UX designs.",
+      "Implemented security and data protection measures to safeguard user information.",
+      "Participated in code reviews to maintain high code quality and foster team knowledge sharing.",
     ],
   },
   {
-    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    review: "Ayodeji’s work at Voltis Labs highlighted his versatility in both Flutter and web development, delivering pixel-perfect applications with scalable architectures.",
+    color: "#62e0ff",
+    title: "Front End Engineer (Flutter & Web)",
+    date: "NOV 2024 – MAY 2025",
+    location: "United Kingdom",
+
+    company: "VOLTIS LABS",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Developed and deployed cross-platform mobile applications for Android and iOS using Flutter, employing state management solutions like GetX and Riverpod.",
+      "Designed scalable and maintainable Flutter architectures, ensuring modular and organized codebases.",
+      "Built responsive web applications, optimizing mobile views through rigorous testing, monitoring, and refactoring.",
     ],
   },
 ];
@@ -262,21 +258,17 @@ export const testimonials = [
 ];
 
 export const socialImgs = [
-  {
-    name: "insta",
-    imgPath: "/images/insta.png",
-  },
-  {
-    name: "fb",
-    imgPath: "/images/fb.png",
-  },
-  {
-    name: "x",
-    imgPath: "/images/x.png",
-  },
+
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+    link: "https://linkedin.com/in/ayopelumi2014"
+  },
+
+  {
+    name: "github",
+    imgPath: "/images/github.png",
+    link: "https://github.com/AYOPELUMI"
   },
 ];
 

@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
+/* src/index.css */
+
+@tailwind utilities;
 
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
@@ -85,12 +88,12 @@ section {
   }
 
   .hero-text {
-    @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
+    @apply flex flex-col justify-center md:text-[40px] text-[30px] font-semibold relative z-10 pointer-events-none;
     img {
       @apply size-8 md:size-10 object-contain;
     }
     .slide {
-      @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
+      @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[58px] md:translate-y-1 translate-y-0 overflow-hidden;
     }
   }
 

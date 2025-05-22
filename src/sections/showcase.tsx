@@ -2,6 +2,8 @@ import { useRef } from "react"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import FeaturedProject from "../components/featuredProject";
+import ProjectCard from "../components/projectCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,38 +37,36 @@ const ShowCase = () => {
     }, [])
     return (
         <section ref={sectionRef} className="app-showcase" id="work">
-            <div className="w-full">
-                <div className="showcaselayout">
-                    <div ref={project1} className="first-project-wrapper">
-                        <div className="image-wrapper">
-                            <img src="/images/project1.png" alt="ryde" />
-                        </div>
-                        <div className="text-content">
-                            <h2>
-                                On-Demand Rides Made Simple with a Powerful, User-Friendly App
-                                called Ryde
-                            </h2>
-                            <p className="text-white-50 md:text-xl">
-                                An app built with React Native, Expo, & TailwindCSS for a fast,
-                                user-friendly experience.
-                            </p>
-                        </div>
-                    </div>
+            <div className="showcaselayout">
+                <FeaturedProject
+                    ref={project1}
+                    title="Simple, Powerful, User-Friendly Web App for Movies"
+                    description="An app built with Next, Typescript, Zustand, & TailwindCSS for a fast, user-friendly experience."
+                    imageSrc="/images/movie-image.png"
+                    altText="ryde"
+                    githubUrl="#"
+                    webUrl="#"
+                />
 
-                    <div className="project-list-wrapper overflow-hidden">
-                        <div ref={project2} className="project">
-                            <div className="image-wrapper bg-[#ffefdb]">
-                                <img src="/images/project2.png" alt="library management" />
-                            </div>
-                            <h2>Library Management Platform</h2>
-                        </div>
-                        <div ref={project3} className="project">
-                            <div className="image-wrapper bg-[#ffe7eb]">
-                                <img src="/images/project3.png" alt="YC Directory" />
-                            </div>
-                            <h2>YC Directory - A Startup Showcase App</h2>
-                        </div>
-                    </div>
+                <div className="project-list-wrapper overflow-hidden">
+                    <ProjectCard
+                        ref={project2}
+                        title="Landing Page Template"
+                        imageSrc="/images/hoo-bank_image.png"
+                        imageBg="bg-[#ffefdb]"
+                        altText="library management"
+                        githubUrl="#"
+                        webUrl="#"
+                    />
+                    <ProjectCard
+                        ref={project3}
+                        title="Dashboard Showcase App"
+                        imageSrc="/images/dashboard-image.png"
+                        imageBg="bg-[#ffe7eb]"
+                        altText="YC Directory"
+                        githubUrl="#"
+                        webUrl="#"
+                    />
                 </div>
             </div>
 

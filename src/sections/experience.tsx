@@ -63,7 +63,9 @@ const Experience = () => {
                         <div key={exp.title} className="exp-card-wrapper">
                             <div className="xl:w-2/6">
                                 <GlowCard card={exp} index={index}>
-                                    <img src={exp.imgPath} alt={exp.title} />
+                                    <h1 className='font-semibold text-xl '>{exp.company}</h1>
+                                    <h1 className='font-semibold text-[#839cb5] text-sm '>{exp.location}</h1>
+
                                 </GlowCard>
 
                             </div>
@@ -75,7 +77,7 @@ const Experience = () => {
                                     </div>
                                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                         <div className="timeline-logo">
-                                            <img src={exp.logoPath} alt='logo' />
+                                            <div style={{ backgroundColor: exp.color }} className='w-full h-full rounded-full'></div>
                                         </div>
                                         <div>
                                             <h1 className='font-semibold text-3xl '>{exp.title}</h1>
