@@ -267,7 +267,7 @@ export const socialImgs = [
 
   {
     name: "github",
-    imgPath: "/images/github.png",
+    imgPath: "/images/github.webp",
     link: "https://github.com/AYOPELUMI"
   },
 ];
