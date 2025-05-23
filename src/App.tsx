@@ -15,31 +15,9 @@ const Testimonials = lazy(() => import('./sections/testimonials'));
 // const Contact = lazy(() => import('./sections/contact'));
 
 
-const Preload3D = () => {
-  useEffect(() => {
-    const preloadAssets = async () => {
-      try {
-        await Promise.all([
-          useGLTF.preload('/models/optimized-room.glb'),
-          useGLTF.preload('/models/react_logo-transformed.glb'),
-          useGLTF.preload('/models/flutter.glb'),
-          useGLTF.preload('/models/github.glb'),
-          useGLTF.preload('/models/typescript.glb'),
-          useGLTF.preload('/models/node-transformed.glb'),
-          useGLTF.preload('/models/three.js-transformed.glb'),
-          useGLTF.preload('/models/git.svg-transformed.glb'),
-          useGLTF.preload('/models/setup-optimized-transformed.glb')
-        ]);
-      } catch (error) {
-        console.error('Error preloading 3D assets:', error);
-      }
-    };
 
-    preloadAssets();
-  }, []);
 
-  return null;
-};
+
 // Improved placeholder with loading states
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -56,7 +34,7 @@ function App() {
 
   return (
     <>
-      <Preload3D />
+
       <Navbar />
       <Hero />
 

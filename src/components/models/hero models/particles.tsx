@@ -1,59 +1,72 @@
-import { useRef, useMemo } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useRef, useMemo, useEffect } from "react"
+import { useFrame } from "@react-three/fiber"
+import * as THREE from "three"
+import { InstancedMesh } from "three"
 
-const Particles = ({ count = 200 }) => {
-  const mesh = useRef(null);
+interface ParticleData {
+  y: number
+  speed: number
+  x: number
+  z: number
+  rotation: number
+}
 
-  const particles = useMemo(() => {
-    const temp = [];
-    for (let i = 0; i < count; i++) {
-      temp.push({
-        position: [
-          (Math.random() - 0.5) * 10,
-          Math.random() * 10 + 5, // higher starting point
-          (Math.random() - 0.5) * 10,
-        ],
-        speed: 0.005 + Math.random() * 0.001,
-      });
-    }
-    return temp;
-  }, [count]);
+const Particles = ({ count = 100 }: { count?: number }) => {
+  const mesh = useRef<InstancedMesh>(null)
+  const particlesData = useRef<ParticleData[]>([])
+  const dummy = useMemo(() => new THREE.Object3D(), [])
+
+  // Shared geometry and material
+  const [sphereGeometry, basicMaterial] = useMemo(() => [
+    new THREE.SphereGeometry(0.05, 8, 8),
+    new THREE.MeshBasicMaterial({
+      color: "#ffffff",
+      transparent: true,
+      opacity: 0.7,
+      depthWrite: false
+    })
+  ], [])
+
+  // Initialize particles data once
+  useEffect(() => {
+    particlesData.current = Array.from({ length: count }, () => ({
+      y: Math.random() * 10 + 5,
+      speed: 0.005 + Math.random() * 0.001,
+      x: (Math.random() - 0.5) * 10,
+      z: (Math.random() - 0.5) * 10,
+      rotation: Math.random() * Math.PI
+    }))
+  }, [count])
 
   useFrame(() => {
-    if (!mesh.current) return;
-    const positions = mesh.current.geometry.attributes.position.array;
-    for (let i = 0; i < count; i++) {
-      let y = positions[i * 3 + 1];
-      y -= particles[i].speed;
-      if (y < -2) y = Math.random() * 10 + 5;
-      positions[i * 3 + 1] = y;
-    }
-    mesh.current.geometry.attributes.position.needsUpdate = true;
-  });
-  const positions = new Float32Array(count * 3);
-  particles.forEach((p, i) => {
-    positions[i * 3] = p.position[0];
-    positions[i * 3 + 1] = p.position[1];
-    positions[i * 3 + 2] = p.position[2];
-  });
+    if (!mesh.current) return
+
+    particlesData.current.forEach((particle, i) => {
+      particle.y -= particle.speed
+      particle.rotation += 0.01
+
+      if (particle.y < -2) {
+        particle.y = Math.random() * 10 + 5
+        particle.x = (Math.random() - 0.5) * 10
+        particle.z = (Math.random() - 0.5) * 10
+      }
+
+      dummy.position.set(particle.x, particle.y, particle.z)
+      dummy.rotation.set(particle.rotation, particle.rotation, 0)
+      dummy.updateMatrix()
+      mesh.current.setMatrixAt(i, dummy.matrix)
+    })
+
+    mesh.current.instanceMatrix.needsUpdate = true
+  })
 
   return (
-    <points ref={mesh}>
-      <bufferGeometry>
-        <bufferAttribute
-          args={[positions, 3]}
-          attach="attributes-position"
-          count={count}
-          array={positions}
-          itemSize={3}       />
-      </bufferGeometry>
-      <pointsMaterial
-        color="#ffffff"
-        size={0.05}
-        transparent
-        opacity={0.9}
-        depthWrite={false}
-      />
-    </points>
-  );
-};export default Particles;
+    <instancedMesh
+      ref={mesh}
+      args={[sphereGeometry, basicMaterial, count]}
+      frustumCulled={false}
+    />
+  )
+}
+
+export default Particles

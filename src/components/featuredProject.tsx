@@ -26,7 +26,7 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
   return (
     <div ref={ref} className={`first-project-wrapper group relative ${className}`}>
       <div className="image-wrapper">
-        <img src={imageSrc} alt={altText}  loading="eager"  />
+        <img src={imageSrc} alt={altText} loading="eager" className='object-contain' />
       </div>
       <div className="text-content">
         <h2>{title}</h2>

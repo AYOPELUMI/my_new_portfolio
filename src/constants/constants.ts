@@ -78,32 +78,32 @@ export const abilities = [
     desc: "Translating Figma designs into flawless, responsive interfaces with attention to detail.",
   },
   {
-    imgPath: "/images/state-management.png", // Example: State management icon
+    imgPath: "/images/state-management.webp", // Example: State management icon
     title: "State Management Expertise",
     desc: "Proficient in Zustand, React Query, GetX, and Riverpod for scalable app architectures.",
   },
   {
-    imgPath: "/images/team.png",
+    imgPath: "/images/team.webp",
     title: "Cross-Functional Collaboration",
     desc: "Working closely with designers, backend devs, and PMs to deliver user-centric solutions.",
   },
   {
-    imgPath: "/images/performance.png",
+    imgPath: "/images/performance.webp",
     title: "Performance Optimization",
     desc: "Boosting app speed and scalability through code splitting, caching, and lazy loading.",
   },
   {
-    imgPath: "/images/mobile.png",
+    imgPath: "/images/mobile.webp",
     title: "Cross-Platform Development",
     desc: "Building Android/iOS apps with Flutter and responsive web apps with React/Next.js.",
   },
   {
-    imgPath: "/images/git.png",
+    imgPath: "/images/git.webp",
     title: "Version Control & CI/CD",
     desc: "Maintaining clean Git workflows and deploying via Firebase/Netlify.",
   },
   {
-    imgPath: "/images/puzzle-piece.png",
+    imgPath: "/images/puzzle-piece.webp",
     title: "Complex Problem Solver",
     desc: "Debugging challenges in UI logic, API responses, and state management.",
   },

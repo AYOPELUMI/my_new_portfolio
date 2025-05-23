@@ -42,7 +42,7 @@ const ShowCase = ({ onLoad }) => {
                     ref={project1}
                     title="Simple, Powerful, User-Friendly Web App for Movies"
                     description="An app built with Next, Typescript, Zustand, & TailwindCSS for a fast, user-friendly experience."
-                    imageSrc="/images/movie-image.png"
+                    imageSrc="/images/movie-image.webp"
                     altText="movie-image"
                     githubUrl="https://github.com/AYOPELUMI/Movie-App"
                     webUrl="https://ayopelumi-moive-app.vercel.app/"
@@ -52,16 +52,16 @@ const ShowCase = ({ onLoad }) => {
                     <ProjectCard
                         ref={project2}
                         title="Landing Page Template"
-                        imageSrc="/images/hoo-bank_image.png"
+                        imageSrc="/images/hoo-bank_image.webp"
                         imageBg="bg-[#ffefdb]"
                         altText="landing-page"
                         githubUrl="https://github.com/AYOPELUMI/hoo_bank"
-                        webUrl="https://ayopelumi-moive-app.vercel.app/"
+                        webUrl="https://ayopelumi-hoo-bank.vercel.app/"
                     />
                     <ProjectCard
                         ref={project3}
                         title="Dashboard Template"
-                        imageSrc="/images/dashboard-image.png"
+                        imageSrc="/images/dashboard-image.webp"
                         imageBg="bg-[#ffe7eb]"
                         altText="dashboard"
                         githubUrl="https://github.com/AYOPELUMI/admin_dashboard"

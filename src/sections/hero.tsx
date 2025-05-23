@@ -9,15 +9,15 @@ const Hero = () => {
         gsap.fromTo('.hero-text h1', { y: 50, opacity: 0 }, {
             y: 0,
             opacity: 1,
-            stagger: 0.3,
-            duration: 2,
+            stagger: 0.2,
+            duration: 0.7,
             ease: "power2.inOut"
         })
     })
     return (
         <section id='hero' className='relative overflow-hidden'>
             <div className='absolute top-0 left-0 z-10'>
-                <img src='/images/bg.png' alt='background' />
+                <img src='/images/bg.webp' alt='background' loading="eager" />
             </div>
 
             <div className='hero-layout'>
@@ -41,7 +41,7 @@ const Hero = () => {
                             <h1>that Drive Innovation</h1>
                         </div>
 
-                        <p className="text-white-50 md:text-xl relative z-10 md: w-1/3">👋 Hi, I am Ayodeji, passionate about crafting interfaces that users love — whether it's a responsive web app or cross-platform mobile experience. I thrive where creativity meets code to turn ideas into seamless solutions. Let's build something amazing! ✨</p>
+                        <p className="text-white-50 md:text-xl relative z-10 md:w-1/3">👋 Hi, I am Ayodeji, passionate about crafting interfaces that users love — whether it's a responsive web app or cross-platform mobile experience. I thrive where creativity meets code to turn ideas into seamless solutions. Let's build something amazing! ✨</p>
                         <Button className="md:w-80 md:h-16 w-60 h-12" id="work" text="See my work" />
                     </div>
 
