@@ -64,7 +64,7 @@ const Experience = ({ onLoad }) => {
             <div className='mt-32 relative'>
                 <div className='relative z-50 xl:space-y-32 space-y-10'>
                     {expCards.map((exp: any, index: number) => (
-                        <div key={exp.company} className="exp-card-wrapper">
+                        <div key={exp.company} className="exp-card-wrapper ">
                             <div className="xl:w-2/6">
                                 <GlowCard card={exp} index={index}>
                                     <h1 className='font-semibold text-xl '>{exp.company}</h1>
@@ -73,12 +73,12 @@ const Experience = ({ onLoad }) => {
                                 </GlowCard>
 
                             </div>
-                            <div className="xl:w-4/6">
+                            <div className="xl:w-4/6 ">
+                                <div className='timeline-wrapper'>
+                                    <div className="timeline" />
+                                    <div className='gradient-line w-1 h-full' />
+                                </div>
                                 <div className='flex items-start'>
-                                    <div className='timeline-wrapper'>
-                                        <div className="timeline" />
-                                        <div className='gradient-line w-1 h-full' />
-                                    </div>
                                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                                         <div className="timeline-logo">
                                             <div style={{ backgroundColor: exp.color }} className='w-full h-full rounded-full'></div>

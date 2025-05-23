@@ -11,15 +11,18 @@
 html,
 body {
   width: 100dvw;
+  /* max-width: 110rem; */
   overflow-x: hidden;
   background-color: black;
   color: white;
   scroll-behavior: smooth;
   font-family: "Mona Sans", sans-serif;
+  margin: auto;
 }
 
 section {
-  width: 100dvw;
+  width: 100vw;
+  /* max-width: 110rem; */
 }
 
 @theme {
@@ -242,7 +245,7 @@ section {
   }
 
   .timeline-wrapper {
-    @apply absolute top-0 xl:left-[39.5vw] 2xl:left-[37.3vw] md:left-10 left-5 h-full flex justify-center z-0;
+    @apply absolute top-0 xl:left-[34%]  xl:ml-20 md:left-10 left-5 h-full flex justify-center z-0;
   }
 
   .timeline {
@@ -250,7 +253,7 @@ section {
   }
 
   .timeline-logo {
-    @apply md:size-20 2xl:size-24 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
+    @apply md:size-20  size-10  flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
   }
 
   .exp-card-wrapper {
