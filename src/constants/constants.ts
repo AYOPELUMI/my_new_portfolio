@@ -176,7 +176,7 @@ export const expCards = [
 
     company: "ZIIYCLOUD TECHNOLOGIES",
     responsibilities: [
-      "Designed and developed visually stunning interfaces using Angular component libraries, ensuring technical feasibility of UI/UX designs.",
+      "Designed and developed visually stunning interfaces using React component libraries, ensuring technical feasibility of UI/UX designs.",
       "Implemented security and data protection measures to safeguard user information.",
       "Participated in code reviews to maintain high code quality and foster team knowledge sharing.",
     ],
